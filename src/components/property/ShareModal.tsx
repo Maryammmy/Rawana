@@ -1,0 +1,95 @@
+import Modal from "@/components/ui/Modal";
+import { FaFacebook, FaWhatsapp, FaTelegram, FaRegCopy } from "react-icons/fa";
+import {
+  FacebookShareButton,
+  TelegramShareButton,
+  TwitterShareButton,
+  WhatsappShareButton,
+} from "react-share";
+import { useState } from "react";
+import { FaSquareXTwitter } from "react-icons/fa6";
+import Input from "@/components/ui/Input";
+import Button from "@/components/ui/Button";
+import { useTranslation } from "react-i18next";
+
+interface IProps {
+  url: string;
+  open: boolean;
+  onClose: () => void;
+}
+function ShareModal({ url, open, onClose }: IProps) {
+  const [copied, setCopied] = useState(false);
+  const { t } = useTranslation();
+
+  const handleCopy = async () => {
+    await navigator.clipboard.writeText(url);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 500);
+  };
+
+  return (
+    <Modal
+      isOpen={open}
+      close={onClose}
+      title={t("share_this_place")}
+      className="pt-6 pb-2 text-center text-xl font-semibold text-primary"
+    >
+      <div className="p-5 sm:p-8">
+        <div className="flex justify-center gap-6 mb-6">
+          <FacebookShareButton url={url}>
+            <FaFacebook
+              size={36}
+              color="#1877f3"
+              className="hover:scale-110 transition"
+            />
+          </FacebookShareButton>
+          <WhatsappShareButton url={url}>
+            <FaWhatsapp
+              size={36}
+              color="#25d366"
+              className="hover:scale-110 transition"
+            />
+          </WhatsappShareButton>
+          <TwitterShareButton url={url}>
+            <FaSquareXTwitter
+              size={36}
+              color="black"
+              className="hover:scale-110 transition"
+            />
+          </TwitterShareButton>
+          <TelegramShareButton url={url}>
+            <FaTelegram
+              size={36}
+              color="#229ed9"
+              className="hover:scale-110 transition"
+            />
+          </TelegramShareButton>
+        </div>
+        <div className="flex items-center gap-2 mb-2" dir="ltr">
+          <Input
+            type="text"
+            value={url}
+            readOnly
+            className="flex-1 px-3 py-2 border rounded-md bg-gray-100 text-gray-700 text-sm outline-none"
+          />
+          <Button
+            onClick={handleCopy}
+            className={`p-2 rounded-md bg-gray-200 hover:bg-primary/10 text-primary transition ${
+              copied && "hidden"
+            }`}
+            title={t("copy_link")}
+          >
+            <FaRegCopy size={20} />
+          </Button>
+          {copied && (
+            <span className="text-green-600 text-xs font-medium mt-1 min-w-[50px] text-center">
+              {t("copied")}
+            </span>
+          )}
+        </div>
+      </div>
+    </Modal>
+  );
+}
+
+export default ShareModal;
