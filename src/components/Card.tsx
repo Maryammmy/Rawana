@@ -36,7 +36,7 @@ function Card({ property }: IProps) {
   const { toggleFav } = useToggleProperty();
   return (
     <Link
-      to={`/properties/${id}`}
+      to={`/hotels/${id}`}
       className="bg-white shadow-md rounded-md overflow-hidden p-4"
       data-aos="fade-up"
     >

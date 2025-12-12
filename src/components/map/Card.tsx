@@ -30,7 +30,7 @@ function Card({ property }: IProps) {
   const { toggleFav } = useToggleProperty();
   return (
     <Link
-      to={`/properties/${id}`}
+      to={`/hotels/${id}`}
       className="block w-[250px] h-full rounded-md overflow-hidden mb-4"
     >
       {image_list?.length > 0 && (

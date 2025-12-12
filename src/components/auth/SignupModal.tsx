@@ -113,7 +113,7 @@ function SignupModal() {
         <div className="pb-3">
           <div className="p-5 md:py-8 md:px-10 sm:max-h-[80vh] sm:overflow-y-auto">
             <h2 className="text-lg font-semibold pb-5">
-              {t("welcome_to_Trent")}
+              {t("welcome_to_Rawana")}
             </h2>
             <form onSubmit={handleSubmit(onSubmit)}>
               {signupData.map(({ name, label, type, placeholder }) => (

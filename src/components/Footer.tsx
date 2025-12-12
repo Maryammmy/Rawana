@@ -23,7 +23,7 @@ function Footer() {
           <div className="flex flex-col gap-5">
             <div className="w-[40%]">
               <Image
-                imageUrl="/images/Trent-blue.svg"
+                imageUrl="/images/Rawana-logo.png"
                 alt="logo"
                 className="w-full h-full object-cover"
               />
@@ -123,7 +123,7 @@ function Footer() {
                     rel="noopener noreferrer"
                   >
                     <Mail size={25} className="text-primary" />
-                    <span className="text-dark">{contactUs?.email}</span>
+                    <span className="text-dark">{"admin@rawana.com"}</span>
                   </Link>
                   <Link
                     to={`https://wa.me/${contactUs?.mobile.replace("+", "")}`}
@@ -132,7 +132,7 @@ function Footer() {
                     rel="noopener noreferrer"
                   >
                     <FaWhatsapp size={25} className="text-primary" />
-                    <span className="text-dark">{contactUs?.mobile}</span>
+                    <span className="text-dark">{"+201110750707"}</span>
                   </Link>
                 </>
               )}
