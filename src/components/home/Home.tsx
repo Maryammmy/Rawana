@@ -10,8 +10,8 @@ import HomeAlert from "@/components/home/HomeAlert";
 import { ISlider } from "@/interfaces";
 import { useContext } from "react";
 import { FilterDataContext } from "@/context/FilterDataContext";
-import HomeSearch from "@/components/home/homeSearch/HomeSearch";
 import { currentLanguage } from "@/constants";
+import HomeSearch from "./homeSearch";
 
 interface IProps {
   onSliderClick: () => void;
