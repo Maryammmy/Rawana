@@ -1,6 +1,7 @@
 {
   "EGP": "EGP",
   "rating": "Rating",
+  "placeholder_search": "Start your adventure...",
   "destination": "Destination",
   "home_search_guests": "Guests",
   "search_destinations": "Search destinations",
