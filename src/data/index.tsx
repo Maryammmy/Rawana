@@ -29,3 +29,26 @@ export const currencies: string[] = [
   "KWD",
   "OMR",
 ];
+export interface GuestCounterConfig {
+  key: "rooms" | "adults" | "children";
+  label: string;
+  min: number;
+}
+
+export const guestCounters: GuestCounterConfig[] = [
+  {
+    key: "rooms",
+    label: "Rooms",
+    min: 1,
+  },
+  {
+    key: "adults",
+    label: "Adults",
+    min: 1,
+  },
+  {
+    key: "children",
+    label: "Children",
+    min: 0,
+  },
+];

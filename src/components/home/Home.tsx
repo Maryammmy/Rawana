@@ -10,7 +10,7 @@ import HomeAlert from "@/components/home/HomeAlert";
 import { ISlider } from "@/interfaces";
 import { useContext } from "react";
 import { FilterDataContext } from "@/context/FilterDataContext";
-import HomeSearch from "@/components/home/HomeSearch";
+import HomeSearch from "@/components/home/homeSearch/HomeSearch";
 import { currentLanguage } from "@/constants";
 
 interface IProps {
@@ -55,7 +55,7 @@ function Home({ onSliderClick }: IProps) {
             <span className="text-secondary">{t("today")}</span>
           </h1>
         </div>
-        <div className="absolute z-20 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+        <div className="absolute lg:w-full z-20 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
           <HomeSearch />
         </div>
       </div>
