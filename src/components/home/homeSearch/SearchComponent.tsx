@@ -6,8 +6,12 @@ import DestinationDropdown from "./DestinationDropdown";
 import useClickOutside from "@/hooks/useClickOutside";
 import Button from "../../ui/Button";
 import GuestsDropdown from "./GuestDropdown";
+import { cn } from "@/lib/utils";
 
-export default function SearchBar() {
+interface IProps {
+  maxWidth?: boolean;
+}
+export default function SearchBar({ maxWidth = true }: IProps) {
   const [showDestinations, setShowDestinations] = useState(false);
   const [showGuests, setShowGuests] = useState(false);
   const [rooms, setRooms] = useState(1);
@@ -59,7 +63,12 @@ export default function SearchBar() {
   );
 
   return (
-    <div className="w-full lg:max-w-4xl xl:max-w-6xl mx-auto p-4">
+    <div
+      className={cn(
+        "w-full p-4",
+        maxWidth && "lg:max-w-4xl xl:max-w-6xl mx-auto"
+      )}
+    >
       <div className="grid grid-cols-1 md:grid-cols-5 gap-3 bg-white rounded-2xl shadow-lg p-4 relative w-full">
         {/* Destination */}
         <div className="relative md:col-span-2">

@@ -7,7 +7,7 @@ import { usePropertyAPI } from "../../services/propertyService";
 import { IDetailsProperty, IFacilityProperty } from "../../interfaces/property";
 import { baseURL } from "../../services";
 import PropertySkeleton from "../../components/skeleton/PropertySkeleton";
-import Map from "../../components/ui/Map";
+// import Map from "../../components/ui/Map";
 import ReviewComponent from "@/components/property/reviews/ReviewComponent";
 import PhotoViewer from "@/components/ui/PhotoViewer";
 import Video from "@/components/ui/Video";
@@ -27,6 +27,10 @@ import {
 import { currentLanguage, websiteUrl } from "@/constants";
 import { getStoredCurrency } from "@/utils/getStoredCurrency";
 import { handleBookingNavigation } from "@/utils/handleBookingNavigation";
+import HomeSearch from "@/components/home/homeSearch";
+import AvailableRooms from "@/components/property/AvailableRooms";
+import SomeHelpfulFacts from "@/components/property/SomeHelpfulFacts";
+import PropertyPolicies from "@/components/property/PropertyPolicies";
 
 const parsedCurrency = getStoredCurrency();
 function Property() {
@@ -62,10 +66,11 @@ function Property() {
         <meta property="og:url" content={url} />
         <meta property="og:type" content="website" />
       </Helmet>
-      <div className="px-5 xl:px-20 py-5 lg:py-10">
+      <div className="px-5 xl:px-20 py-5 lg:py-10 pt-0 lg:pt-0">
         {data ? (
           <>
-            <div className="flex justify-between items-center pb-10">
+            <HomeSearch maxWidth={false} />
+            <div className="flex justify-between items-center pt-4 pb-8">
               <h2
                 className="font-bold text-2xl text-stone-800"
                 data-aos="fade-up"
@@ -259,14 +264,17 @@ function Property() {
                 </div>
               </div>
               <Amenities facilities={facilities} />
+              <AvailableRooms />
+              <SomeHelpfulFacts />
+              <PropertyPolicies />
               <ReviewComponent id={id} />
             </div>
-            <div className="max-w-7xl mx-auto py-5">
+            {/* <div className="max-w-7xl mx-auto py-5">
               <Map
                 latitdude={Number(propertyDetails?.latitude)}
                 longitude={Number(propertyDetails?.longitude)}
               />
-            </div>
+            </div> */}
           </>
         ) : (
           <PropertySkeleton />
