@@ -2,15 +2,14 @@ import { BaseProps } from "@/interfaces";
 
 export type SignupNameInputs = {
   name: string;
-  email?: string;
+  email: string;
   mobile: string;
   ccode: string;
   password: string;
   confirmPassword: string;
 };
 export type LoginNameInputs = {
-  mobile: string;
-  ccode: string;
+  email: string;
   password: string;
 };
 export type PropertyNameInputs = {

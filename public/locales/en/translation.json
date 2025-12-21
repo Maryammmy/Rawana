@@ -456,6 +456,7 @@
   "terms_label": "I accept the <guest>Guest</guest> and <host>Host</host> Terms and Conditions",
   "terms_required": "You must accept the Terms and Conditions to proceed",
   "name_required": "Name is required",
+  "email_required": "Email is required",
   "name_letters_only": "The name must contain only letters",
   "name_min_length": "The name must be at least 3 characters",
   "name_max_length": "The name may not be greater than 50 characters",

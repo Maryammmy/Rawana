@@ -17,7 +17,6 @@ import { LoginNameInputs } from "../../types";
 import { useLocation, useNavigate } from "react-router-dom";
 import ForgetPasswordModal from "./ForgetPasswordModal";
 import { useTranslation } from "react-i18next";
-import CountrySelector from "../ui/CountrySelector";
 import { handleErrorMessage } from "@/utils/handleErrorMsg";
 
 function LoginModal() {
@@ -36,7 +35,7 @@ function LoginModal() {
     formState: { errors },
   } = useForm<LoginNameInputs>({
     resolver: yupResolver(loginSchema),
-    defaultValues: { mobile: "", password: "", ccode: "+20" },
+    defaultValues: { email: "", password: "" },
   });
   const onSubmit: SubmitHandler<LoginNameInputs> = async (data) => {
     setLoading(true);
@@ -76,42 +75,24 @@ function LoginModal() {
           <form onSubmit={handleSubmit(onSubmit)}>
             <div className="mb-4">
               <label className="block text-sm font-medium mb-1">
-                {t("phone_number")}
+                {t("email")}
               </label>
-              <div
-                dir="ltr"
-                className="flex items-center gap-2 border rounded-lg p-3 focus-within:border-2 focus-within:border-primary"
-              >
+              <div className="flex items-center border rounded-lg p-3 focus-within:border-2 focus-within:border-primary">
                 <Controller
-                  name="ccode"
-                  control={control}
-                  render={({ field }) => (
-                    <CountrySelector
-                      selectedCountry={field.value}
-                      onChange={field.onChange}
-                    />
-                  )}
-                />
-                <Controller
-                  name="mobile"
+                  name="email"
                   control={control}
                   render={({ field }) => (
                     <Input
                       {...field}
-                      type="text"
-                      placeholder={t("enter_your_phone_number")}
+                      type="email"
+                      placeholder={t("enter_email")}
                       className="w-full outline-none"
-                      onChange={(e) => {
-                        const value = e.target.value.replace(/^0+/, "");
-                        field.onChange(value);
-                      }}
                     />
                   )}
                 />
               </div>
-              {errors.mobile && (
-                <InputErrorMessage msg={errors.mobile.message} />
-              )}
+
+              {errors.email && <InputErrorMessage msg={errors.email.message} />}
             </div>
             <Controller
               name="password"

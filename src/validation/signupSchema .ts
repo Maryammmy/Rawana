@@ -7,7 +7,7 @@ export const signupSchema = Yup.object({
     .matches(/^[A-Za-z\s]+$/, "name_letters_only_sign_up")
     .min(3, "name_min_length_sign_up")
     .max(50, "name_max_length_sign_up"),
-  email: Yup.string().trim().email("invalid_email"),
+  email: Yup.string().trim().email("invalid_email").required("email_required"),
   mobile: Yup.string()
     .trim()
     .required("phone_number_required")

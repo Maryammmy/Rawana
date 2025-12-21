@@ -448,6 +448,7 @@
   "terms_label": "أوافق على الشروط والأحكام الخاصة <guest>بالضيف</guest> و <host>المضيف</host>",
   "terms_required": "يجب الموافقة على الشروط والأحكام للمتابعة",
   "name_required": "الاسم مطلوب",
+  "email_required": "يرجى إدخال البريد الإلكتروني",
   "name_letters_only": "يجب أن يحتوي الاسم على أحرف فقط",
   "name_min_length_sign_up": "يجب أن يكون الاسم 3 أحرف على الأقل",
   "name_max_length_sign_up": "يجب ألا يتجاوز الاسم 50 حرفًا",
