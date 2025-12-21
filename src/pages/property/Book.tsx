@@ -1,5 +1,4 @@
 import Loader from "@/components/loader/Loader";
-import CheckDates from "@/components/property/CheckDates";
 import Button from "@/components/ui/Button";
 import Counter from "@/components/ui/Counter";
 import {
@@ -19,6 +18,7 @@ import Input from "@/components/ui/Input";
 import BookingSkeleton from "@/components/skeleton/BookingSkeleton";
 import { uid, currentLanguage } from "@/constants";
 import { handleErrorMessage } from "@/utils/handleErrorMsg";
+import CheckDates from "@/components/property/bookNow/CheckDates";
 
 function Book() {
   const [counter, setCounter] = useState(1);

@@ -1,7 +1,7 @@
 import { useTranslation } from "react-i18next";
-import DatePicker from "../ui/DatePicker";
+import DatePicker from "../../ui/DatePicker";
 import { DateValueType } from "react-tailwindcss-datepicker";
-import InputErrorMessage from "../ui/InputErrorMessage";
+import InputErrorMessage from "../../ui/InputErrorMessage";
 import { useMediaQuery } from "react-responsive";
 interface IProps {
   startDateValue: DateValueType;
